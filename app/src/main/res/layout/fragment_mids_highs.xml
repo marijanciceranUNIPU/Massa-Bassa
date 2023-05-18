@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".Calculator_Mids_n_Highs"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="16dp"
+            android:text="Mids and highs power calculator"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total Power (Watts)"
+            android:textColor="#311B92" />
+
+        <EditText
+            android:id="@+id/powerEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mids Power Percentage"
+            android:textColor="#311B92" />
+
+        <RadioGroup
+            android:id="@+id/midsRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mids20RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20%"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/mids25RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25%"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Highs Power Percentage" />
+
+        <RadioGroup
+            android:id="@+id/highsRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/highs5RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5%" />
+
+            <RadioButton
+                android:id="@+id/highs10RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10%" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/calculatePowerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Calculate" />
+
+        <TextView
+            android:id="@+id/midsResultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mids Power: "
+            android:textColor="#311B92" />
+
+        <TextView
+            android:id="@+id/highsResultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Highs Power: "
+            android:textColor="#311B92" />
+
+    </LinearLayout>

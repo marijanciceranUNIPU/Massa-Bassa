@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Calculator_Power_Amp"
+    android:orientation="vertical">
+
+    <fragment
+        android:id="@+id/fragment_place"
+        android:name="com.hr.unipu.MassaBassa.Menu_Fragment_AmpPowerCalculator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></fragment>
+
+</LinearLayout>

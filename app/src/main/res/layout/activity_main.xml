@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/PrvaSlikaSelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="2dp"
+        android:background="@android:color/white"
+        android:onClick="ChangeFragment"
+        android:padding="20dp"
+        android:text="Amp Power Calculator"
+        android:textAllCaps="false"
+        android:textColor="#039BE5"
+        android:textSize="24sp"
+        android:maxWidth="100dp"
+        android:maxHeight="80dp"/>
+
+    <Button
+        android:id="@+id/DrugaSlikaSelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:background="@android:color/white"
+        android:onClick="ChangeFragment"
+        android:padding="20dp"
+        android:text="Mids And Highs"
+        android:textAllCaps="false"
+        android:textColor="#039BE5"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/TrecaSlikaSelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:background="@android:color/white"
+        android:padding="20dp"
+        android:text="Cone Area Calculator"
+        android:textAllCaps="false"
+        android:textColor="#039BE5"
+        android:textSize="24sp" />
+</LinearLayout>

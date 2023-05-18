@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">BassaholicApp</string>
+    <string name="menu1_prompt">Select an item from Menu 1</string>
+    <string name="menu2_prompt">Select an item from Menu 2</string>
+    <string name="menu3_prompt">Select an item from Menu 3</string>
+    <string name="subwoofer_cone_area_calculator">Subwoofer Cone Area Calculator</string>
+    <string name="size_of_subs_inches">Size of Subs (inches):</string>
+    <string name="calculate">Calculate</string>
+    <string name="error_message">Wrong input</string>
+
+    <string-array name="menu1_items">
+        <item>Subwoofer Cone Area Calculator</item>
+        <item>Mids And Highs Power Calculator</item>
+        <item>Recommended Amp Power Calculator</item>
+        <item>Different Setup Cone Area Calculator</item>
+    </string-array>
+
+    <string-array name="menu2_items">
+        <item>Media Player</item>
+        <item>Item 2</item>
+    </string-array>
+
+    <string-array name="menu3_items">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+    </string-array>
+</resources>
+

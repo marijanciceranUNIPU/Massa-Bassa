@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="powerEditText" type="id" />
+    <item name="midsRadioGroup" type="id" />
+    <item name="midsResultTextView" type="id" />
+    <item name="highsRadioGroup" type="id" />
+    <item name="highsResultTextView" type="id" />
+    <item name="calculatePowerButton" type="id" />
+    <item name="numSubsEditText" type="id" />
+    <item name="subSizeEditText" type="id" />
+    <item name="calculateButton" type="id" />
+    <item name="resultTextView" type="id" />
+</resources>
