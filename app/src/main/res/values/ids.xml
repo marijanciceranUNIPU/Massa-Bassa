@@ -10,4 +10,5 @@
     <item name="subSizeEditText" type="id" />
     <item name="calculateButton" type="id" />
     <item name="resultTextView" type="id" />
+    <item name="imageView" type="id" />
 </resources>

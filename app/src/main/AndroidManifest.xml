@@ -9,21 +9,27 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.DayNight"
+        android:theme="@style/CustomAppTheme"
         tools:targetApi="31">
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Calculator_Power_Amp"/>
         <activity android:name=".Calculator_Mids_n_Highs"/>
         <activity android:name=".Calculator_Cone_Area"/>
         <activity android:name=".MainActivityPodMenu"/>
         <activity android:name=".Calculator_Different_Cone_Area"/>
+        <activity android:name=".Calculator_Wire_Amps"/>
+        <activity
+            android:name=".EnterMainPage"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>
