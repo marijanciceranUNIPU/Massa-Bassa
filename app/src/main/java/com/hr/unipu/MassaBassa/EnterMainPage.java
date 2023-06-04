@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EnterMainPage extends AppCompatActivity {
@@ -20,7 +19,7 @@ public class EnterMainPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Start MainActivity
-                Intent intent = new Intent(EnterMainPage.this, MainActivity.class);
+                Intent intent = new Intent(EnterMainPage.this, PredMainMenu.class);
                 startActivity(intent);
             }
         });

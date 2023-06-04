@@ -20,7 +20,8 @@
         android:textColor="#039BE5"
         android:textSize="24sp"
         android:maxWidth="100dp"
-        android:maxHeight="80dp"/>
+        android:maxHeight="80dp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/DrugaSlikaSelection"
@@ -33,7 +34,8 @@
         android:text="Mids And Highs"
         android:textAllCaps="false"
         android:textColor="#039BE5"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/TrecaSlikaSelection"
@@ -45,7 +47,8 @@
         android:text="Cone Area Calculator"
         android:textAllCaps="false"
         android:textColor="#039BE5"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/CetvrtaSlikaSelection"
@@ -57,6 +60,7 @@
         android:text="Wire Calculator"
         android:textAllCaps="false"
         android:textColor="#039BE5"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

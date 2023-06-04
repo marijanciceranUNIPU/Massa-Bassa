@@ -64,12 +64,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            Intent intent = new Intent(MainActivity.this, EnterMainPage.class);
+            Intent intent = new Intent(MainActivity.this, PredMainMenu.class);
             startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
+
     public void openActivity(){
         Intent intent = new Intent(this,Calculator_Power_Amp.class);
         startActivity(intent);
