@@ -32,35 +32,26 @@ public class PredMainMenu extends AppCompatActivity {
     }
 
     public void ChangeFragment(View view) {
-        // Handle button click event here
         int id = view.getId();
         Intent intent;
 
         switch (id) {
             case R.id.PrviSelect:
-                // Handle PrvaSlikaSelection button click
                 intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
             case R.id.DrugiSelect:
-                // Handle DrugaSlikaSelection button click
-                intent = new Intent(this, MainActivity.class);
+                intent = new Intent(this, ManualsVideos.class);
                 startActivity(intent);
                 break;
-            case R.id.TreciSelect:
-                // Handle TrecaSlikaSelection button click
+            case R.id.thirdselect:
                 intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
             case R.id.CetvrtiSelect:
-                // Handle CetvrtaSlikaSelection button click
-                openAppInfo();
+                intent = new Intent(this, AboutApp.class);
+                startActivity(intent);
                 break;
         }
-    }
-
-    public void openAppInfo() {
-        Intent intent = new Intent(this, AboutApp.class);
-        startActivity(intent);
     }
 }

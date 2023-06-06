@@ -25,5 +25,19 @@
         <item>Item 2</item>
         <item>Item 3</item>
     </string-array>
+    <string-array name="color_options">
+        <item>Color Option 1</item>
+        <item>Color Option 2</item>
+        <item>Color Option 3</item>
+        <!-- Add more color options as needed -->
+    </string-array>
+
+    <string-array name="theme_options">
+        <item>Theme Option 1</item>
+        <item>Theme Option 2</item>
+        <item>Theme Option 3</item>
+        <!-- Add more theme options as needed -->
+    </string-array>
+
 </resources>
 

@@ -11,4 +11,8 @@
     <item name="calculateButton" type="id" />
     <item name="resultTextView" type="id" />
     <item name="imageView" type="id" />
+    <item name="toolbar" type="id" />
+    <item name="action_search" type="id" />
+    <item name="titleTextView" type="id" />
+    <item name="descriptionTextView" type="id" />
 </resources>
