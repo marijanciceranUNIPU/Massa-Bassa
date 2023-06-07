@@ -45,7 +45,7 @@ public class PredMainMenu extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.thirdselect:
-                intent = new Intent(this, MainActivity.class);
+                intent = new Intent(this, EventsActivity.class);
                 startActivity(intent);
                 break;
             case R.id.CetvrtiSelect:
