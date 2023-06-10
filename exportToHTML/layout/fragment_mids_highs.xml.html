@@ -1,0 +1,149 @@
+<html>
+<head>
+<title>fragment_mids_highs.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #e8bf6a;}
+.s1 { color: #bababa;}
+.s2 { color: #6a8759;}
+.s3 { color: #a9b7c6;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+fragment_mids_highs.xml</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;?</span><span class="s1">xml version</span><span class="s2">=&quot;1.0&quot; </span><span class="s1">encoding</span><span class="s2">=&quot;utf-8&quot;</span><span class="s0">?&gt;</span>
+<span class="s0">&lt;LinearLayout</span>
+    <span class="s1">xmlns:android</span><span class="s2">=&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="s1">xmlns:tools</span><span class="s2">=&quot;http://schemas.android.com/tools&quot;</span>
+    <span class="s1">tools:context</span><span class="s2">=&quot;.Calculator_Mids_n_Highs&quot;</span>
+    <span class="s1">android:orientation</span><span class="s2">=&quot;vertical&quot;</span>
+    <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+    <span class="s1">android:layout_height</span><span class="s2">=&quot;match_parent&quot;</span><span class="s0">&gt;</span>
+
+    <span class="s0">&lt;TextView</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:gravity</span><span class="s2">=&quot;center&quot;</span>
+        <span class="s1">android:layout_margin</span><span class="s2">=&quot;16dp&quot;</span>
+        <span class="s1">android:text</span><span class="s2">=&quot;Mids and highs power calculator&quot;</span>
+        <span class="s1">android:textSize</span><span class="s2">=&quot;28sp&quot;</span>
+        <span class="s1">android:textStyle</span><span class="s2">=&quot;bold&quot;</span>
+        <span class="s1">android:textColor</span><span class="s2">=&quot;#000000&quot;</span>
+        <span class="s1">android:padding</span><span class="s2">=&quot;8dp&quot;</span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;TextView</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:text</span><span class="s2">=&quot;Total Power (Watts)&quot;</span>
+        <span class="s1">android:textColor</span><span class="s2">=&quot;#000000&quot;</span>
+        <span class="s1">android:textSize</span><span class="s2">=&quot;18sp&quot;</span>
+        <span class="s1">android:padding</span><span class="s2">=&quot;8dp&quot;</span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;EditText</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/powerEditText&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:inputType</span><span class="s2">=&quot;number&quot;</span>
+        <span class="s1">android:minHeight</span><span class="s2">=&quot;48dp&quot;</span>
+        <span class="s1">android:textColor</span><span class="s2">=&quot;#000000&quot;</span>
+        <span class="s1">android:padding</span><span class="s2">=&quot;8dp&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;TextView</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:text</span><span class="s2">=&quot;Mids Power Percentage&quot;</span>
+        <span class="s1">android:textColor</span><span class="s2">=&quot;#000000&quot;</span>
+        <span class="s1">android:textSize</span><span class="s2">=&quot;18sp&quot;</span>
+        <span class="s1">android:padding</span><span class="s2">=&quot;8dp&quot;</span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;RadioGroup</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/midsRadioGroup&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:orientation</span><span class="s2">=&quot;horizontal&quot;</span>
+        <span class="s1">android:padding</span><span class="s2">=&quot;8dp&quot;</span><span class="s0">&gt;</span>
+
+        <span class="s0">&lt;RadioButton</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/mids20RadioButton&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;20%&quot;</span>
+            <span class="s1">tools:ignore</span><span class="s2">=&quot;TouchTargetSizeCheck&quot;</span>
+            <span class="s1">android:textColor</span><span class="s2">=&quot;#000000&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;RadioButton</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/mids25RadioButton&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;25%&quot;</span>
+            <span class="s1">tools:ignore</span><span class="s2">=&quot;TouchTargetSizeCheck&quot;</span>
+            <span class="s1">android:textColor</span><span class="s2">=&quot;#000000&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;/RadioGroup&gt;</span>
+
+    <span class="s0">&lt;TextView</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:text</span><span class="s2">=&quot;Highs Power Percentage&quot;</span>
+        <span class="s1">android:textColor</span><span class="s2">=&quot;#000000&quot;</span>
+        <span class="s1">android:textSize</span><span class="s2">=&quot;18sp&quot;</span>
+        <span class="s1">android:padding</span><span class="s2">=&quot;8dp&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;RadioGroup</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/highsRadioGroup&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:orientation</span><span class="s2">=&quot;horizontal&quot;</span>
+        <span class="s1">android:padding</span><span class="s2">=&quot;8dp&quot;</span><span class="s0">&gt;</span>
+
+        <span class="s0">&lt;RadioButton</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/highs5RadioButton&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;5%&quot;</span>
+            <span class="s1">android:textColor</span><span class="s2">=&quot;#000000&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;RadioButton</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/highs10RadioButton&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;10%&quot;</span>
+            <span class="s1">android:textColor</span><span class="s2">=&quot;#000000&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;/RadioGroup&gt;</span>
+
+    <span class="s0">&lt;Button</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/calculatePowerButton&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:layout_margin</span><span class="s2">=&quot;16dp&quot;</span>
+        <span class="s1">android:text</span><span class="s2">=&quot;Calculate&quot;</span>
+        <span class="s1">android:textColor</span><span class="s2">=&quot;#000000&quot;</span>
+        <span class="s1">android:padding</span><span class="s2">=&quot;8dp&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;TextView</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/midsResultTextView&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:text</span><span class="s2">=&quot;Mids Power: &quot;</span>
+        <span class="s1">android:textColor</span><span class="s2">=&quot;#000000&quot;</span>
+        <span class="s1">android:textSize</span><span class="s2">=&quot;18sp&quot;</span>
+        <span class="s1">android:padding</span><span class="s2">=&quot;8dp&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;TextView</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/highsResultTextView&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:text</span><span class="s2">=&quot;Highs Power: &quot;</span>
+        <span class="s1">android:textColor</span><span class="s2">=&quot;#000000&quot;</span>
+        <span class="s1">android:textSize</span><span class="s2">=&quot;18sp&quot;</span>
+        <span class="s1">android:padding</span><span class="s2">=&quot;8dp&quot; </span><span class="s0">/&gt;</span>
+
+<span class="s0">&lt;/LinearLayout&gt;</span>
+</pre>
+</body>
+</html>

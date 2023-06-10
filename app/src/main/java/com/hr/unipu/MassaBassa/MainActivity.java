@@ -13,11 +13,10 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private Button PrvaSlikaSelection;
-    private Button DrugaSlikaSelection;
-    private Button TrecaSlikaSelection;
-
-    private Button CetvrtaSlikaSelection;
+    private Button FirstOptionSelection;
+    private Button SecondOptionSelection;
+    private Button ThirdOptionSelection;
+    private Button FourthOptionSelection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,32 +28,32 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        PrvaSlikaSelection = (Button)findViewById(R.id.PrvaSlikaSelection);
-        DrugaSlikaSelection = (Button)findViewById(R.id.DrugaSlikaSelection);
-        TrecaSlikaSelection = (Button)findViewById(R.id.TrecaSlikaSelection);
-        CetvrtaSlikaSelection = (Button)findViewById(R.id.CetvrtaSlikaSelection);
+        FirstOptionSelection = (Button)findViewById(R.id.FirstOptionSelection);
+        SecondOptionSelection = (Button)findViewById(R.id.SecondOptionSelection);
+        ThirdOptionSelection = (Button)findViewById(R.id.ThirdOptionSelection);
+        FourthOptionSelection = (Button)findViewById(R.id.FourthOptionSelection);
 
-        PrvaSlikaSelection.setOnClickListener(new View.OnClickListener() { // Activity, prva biljka opis
+        FirstOptionSelection.setOnClickListener(new View.OnClickListener() { // Activity, prva biljka opis
             @Override
             public void onClick(View v) {
                 openActivity();
             }
         });
 
-        DrugaSlikaSelection.setOnClickListener(new View.OnClickListener() { // Activity, druga biljka opis
+        SecondOptionSelection.setOnClickListener(new View.OnClickListener() { // Activity, druga biljka opis
             @Override
             public void onClick(View v) {
                 openActivity2();
             }
         });
 
-        TrecaSlikaSelection.setOnClickListener(new View.OnClickListener() { // Activity, treca biljka opis
+        ThirdOptionSelection.setOnClickListener(new View.OnClickListener() { // Activity, treca biljka opis
             @Override
             public void onClick(View v) {
                 openActivity3();
             }
         });
-        CetvrtaSlikaSelection.setOnClickListener(new View.OnClickListener() { // Activity, treca biljka opis
+        FourthOptionSelection.setOnClickListener(new View.OnClickListener() { // Activity, treca biljka opis
             @Override
             public void onClick(View v) {
                 openActivity4();
@@ -85,20 +84,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void openActivity4(){
-        Intent intent = new Intent(this,Calculator_Wire_Amps.class);
+        Intent intent = new Intent(this,SubwooferWiringActivity.class);
         startActivity(intent);
     }
 
     public void ChangeFragment(View view){
         Fragment fragment;
-        if (view == findViewById(R.id.PrvaSlikaSelection)){
+        if (view == findViewById(R.id.FirstOptionSelection)){
             fragment = new Menu_Fragment_AmpPowerCalculator();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.fragment_place, fragment);
             ft.commit();
         }
-        if (view == findViewById(R.id.DrugaSlikaSelection)){
+        if (view == findViewById(R.id.SecondOptionSelection)){
             fragment = new Menu_Fragment_MidsAndHighsCalculator();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
@@ -106,14 +105,14 @@ public class MainActivity extends AppCompatActivity {
             ft.commit();
         }
 
-        if (view == findViewById(R.id.TrecaSlikaSelection)){
+        if (view == findViewById(R.id.ThirdOptionSelection)){
             fragment = new Fragment();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.fragment_place, fragment);
             ft.commit();
         }
-        if (view == findViewById(R.id.CetvrtaSlikaSelection)){
+        if (view == findViewById(R.id.FourthOptionSelection)){
             fragment = new Fragment();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();

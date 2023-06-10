@@ -1,0 +1,305 @@
+<html>
+<head>
+<title>SubwooferWiringActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #808080;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+SubwooferWiringActivity.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.hr.unipu.MassaBassa</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.MenuItem</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.AdapterView</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.ArrayAdapter</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Button</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Spinner</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.TextView</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.appcompat.app.AppCompatActivity</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">SubwooferWiringActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity {</span>
+
+    <span class="s0">private </span><span class="s1">Spinner spinnerNumSpeakers</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">Spinner spinnerVoiceCoils</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">TextView textViewResult</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">Button buttonCalculate</span><span class="s0">;</span>
+
+    <span class="s0">private int </span><span class="s1">selectedNumSpeakers = </span><span class="s2">1</span><span class="s0">;</span>
+    <span class="s0">private int </span><span class="s1">selectedVoiceCoilImpedance = </span><span class="s2">1</span><span class="s0">;</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span>
+        <span class="s1">setContentView(R.layout.activity_subwoofer_wiring)</span><span class="s0">;</span>
+
+        <span class="s1">spinnerNumSpeakers = findViewById(R.id.spinnerNumSpeakers)</span><span class="s0">;</span>
+        <span class="s1">spinnerVoiceCoils = findViewById(R.id.spinnerVoiceCoils)</span><span class="s0">;</span>
+        <span class="s1">textViewResult = findViewById(R.id.textViewResult)</span><span class="s0">;</span>
+        <span class="s1">buttonCalculate = findViewById(R.id.buttonCalculate)</span><span class="s0">;</span>
+
+        <span class="s3">// Set up the number of speakers spinner</span>
+        <span class="s1">List&lt;String&gt; numSpeakersList = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;()</span><span class="s0">;</span>
+        <span class="s1">numSpeakersList.add(</span><span class="s4">&quot;1 speaker&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">numSpeakersList.add(</span><span class="s4">&quot;2 speakers&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">numSpeakersList.add(</span><span class="s4">&quot;3 speakers&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">numSpeakersList.add(</span><span class="s4">&quot;4 speakers&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">ArrayAdapter&lt;String&gt; numSpeakersAdapter = </span><span class="s0">new </span><span class="s1">ArrayAdapter&lt;&gt;(</span><span class="s0">this, </span><span class="s1">android.R.layout.simple_spinner_item</span><span class="s0">, </span><span class="s1">numSpeakersList)</span><span class="s0">;</span>
+        <span class="s1">spinnerNumSpeakers.setAdapter(numSpeakersAdapter)</span><span class="s0">;</span>
+
+        <span class="s3">// Set up the voice coils spinner</span>
+        <span class="s1">List&lt;String&gt; voiceCoilsList = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;()</span><span class="s0">;</span>
+        <span class="s1">voiceCoilsList.add(</span><span class="s4">&quot;1 ohm dual voice coils&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">voiceCoilsList.add(</span><span class="s4">&quot;2 ohm dual voice coils&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">voiceCoilsList.add(</span><span class="s4">&quot;4 ohm dual voice coils&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">voiceCoilsList.add(</span><span class="s4">&quot;6 ohm dual voice coils&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">voiceCoilsList.add(</span><span class="s4">&quot;4 ohm single voice coil&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">voiceCoilsList.add(</span><span class="s4">&quot;8 ohm single voice coil&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">ArrayAdapter&lt;String&gt; voiceCoilsAdapter = </span><span class="s0">new </span><span class="s1">ArrayAdapter&lt;&gt;(</span><span class="s0">this, </span><span class="s1">android.R.layout.simple_spinner_item</span><span class="s0">, </span><span class="s1">voiceCoilsList)</span><span class="s0">;</span>
+        <span class="s1">spinnerVoiceCoils.setAdapter(voiceCoilsAdapter)</span><span class="s0">;</span>
+
+        <span class="s3">// Set an OnItemSelectedListener for the number of speakers spinner</span>
+        <span class="s1">spinnerNumSpeakers.setOnItemSelectedListener(</span><span class="s0">new </span><span class="s1">AdapterView.OnItemSelectedListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onItemSelected(AdapterView&lt;?&gt; parent</span><span class="s0">, </span><span class="s1">View view</span><span class="s0">, int </span><span class="s1">position</span><span class="s0">, long </span><span class="s1">id) {</span>
+                <span class="s1">selectedNumSpeakers = position + </span><span class="s2">1</span><span class="s0">;</span>
+            <span class="s1">}</span>
+
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onNothingSelected(AdapterView&lt;?&gt; parent) {</span>
+                <span class="s3">// Not used</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s3">// Set an OnItemSelectedListener for the voice coils spinner</span>
+        <span class="s1">spinnerVoiceCoils.setOnItemSelectedListener(</span><span class="s0">new </span><span class="s1">AdapterView.OnItemSelectedListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onItemSelected(AdapterView&lt;?&gt; parent</span><span class="s0">, </span><span class="s1">View view</span><span class="s0">, int </span><span class="s1">position</span><span class="s0">, long </span><span class="s1">id) {</span>
+                <span class="s1">selectedVoiceCoilImpedance = (</span><span class="s0">int</span><span class="s1">) getVoiceCoilImpedance(position)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onNothingSelected(AdapterView&lt;?&gt; parent) {</span>
+                <span class="s3">// Not used</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s3">// Set an OnClickListener for the Calculate button</span>
+        <span class="s1">buttonCalculate.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View v) {</span>
+                <span class="s1">calculateResult()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s3">// Add the back button to the action bar</span>
+        <span class="s1">getSupportActionBar().setDisplayHomeAsUpEnabled(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">private void </span><span class="s1">calculateResult() {</span>
+        <span class="s1">String result</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">impedanceResult</span><span class="s0">;</span>
+
+        <span class="s0">if </span><span class="s1">(selectedVoiceCoilImpedance == </span><span class="s2">1.0</span><span class="s1">) {</span>
+            <span class="s0">switch </span><span class="s1">(selectedNumSpeakers) {</span>
+                <span class="s0">case </span><span class="s2">1</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">0.5</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 0.5 ohm parallel </span><span class="s0">\n </span><span class="s4">Option 2: 2 ohm series&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">2</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">1.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 1 ohm parallel </span><span class="s0">\n </span><span class="s4">Option 2: 4 ohm series&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">3</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">0.67</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot; </span><span class="s0">\n </span><span class="s4">Option 1: 0.67 ohm series/parallel </span><span class="s0">\n </span><span class="s4">Option 2: 1.5 ohm parallel/series </span><span class="s0">\n </span><span class="s4">Option 3: 6 ohm series&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">4</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">0.5</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 0.5 ohm series/parallel </span><span class="s0">\n </span><span class="s4">Option 2: 2 ohm parallel/series </span><span class="s0">\n </span><span class="s4">Option 3: 8 ohm series&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">default</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">0.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Invalid selection&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+            <span class="s1">}</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(selectedVoiceCoilImpedance == </span><span class="s2">2.0</span><span class="s1">) {</span>
+            <span class="s0">switch </span><span class="s1">(selectedNumSpeakers) {</span>
+                <span class="s0">case </span><span class="s2">1</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">1.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 1 ohm parallel </span><span class="s0">\n </span><span class="s4">Option 2: 4 ohm series&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">2</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">0.5</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 0.5 ohm parallel/parallel </span><span class="s0">\n </span><span class="s4">Option 2: 2 ohm series/parallel </span><span class="s0">\n </span><span class="s4">Option 3: 8 ohm series&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">3</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">1.34</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 1.34 ohm series/parallel </span><span class="s0">\n </span><span class="s4">Option 2: 3 ohm parallel/series </span><span class="s0">\n </span><span class="s4">Option 3: 12 ohm series (not recommended)&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">4</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">1.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 1 ohm series/parallel </span><span class="s0">\n </span><span class="s4">Option 2: 4 ohm parallel/series&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">default</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">0.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Invalid selection&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+            <span class="s1">}</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(selectedVoiceCoilImpedance == </span><span class="s2">4.0</span><span class="s1">) {</span>
+            <span class="s0">switch </span><span class="s1">(selectedNumSpeakers) {</span>
+                <span class="s0">case </span><span class="s2">1</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">2.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 2 ohm parallel </span><span class="s0">\n </span><span class="s4">Option 2: 8 ohm series&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">2</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">1.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 1 ohm parallel/parallel </span><span class="s0">\n </span><span class="s4">Option 2: 4 ohm series/parallel&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">3</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">2.67</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 2.67 ohm series/parallel </span><span class="s0">\n </span><span class="s4">Option 2: 6 ohm parallel/series&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">4</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">0.5</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 0.5 ohm parallel </span><span class="s0">\n </span><span class="s4">Option 2: 2 ohm series/parallel </span><span class="s0">\n </span><span class="s4">Option 3: 8 ohm parallel/series&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">default</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">0.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Invalid selection&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+            <span class="s1">}</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(selectedVoiceCoilImpedance == </span><span class="s2">6.0</span><span class="s1">) {</span>
+            <span class="s0">switch </span><span class="s1">(selectedNumSpeakers) {</span>
+                <span class="s0">case </span><span class="s2">1</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">3.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 3 ohm parallel </span><span class="s0">\n </span><span class="s4">Option 2: 12 ohm series (not recommended)&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">2</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">1.5</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 1.5 ohm parallel/parallel </span><span class="s0">\n </span><span class="s4">Option 2: 6 ohm series/parallel&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">3</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">1.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 1 ohm parallel/parallel </span><span class="s0">\n </span><span class="s4">Option 2: 4 ohm series/parallel </span><span class="s0">\n </span><span class="s4">Option 3: 9 ohm parallel/series&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">4</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">0.75</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 0.75 ohm parallel </span><span class="s0">\n </span><span class="s4">Option 2: 3 ohm series/parallel </span><span class="s0">\n </span><span class="s4">Option 3: 12 ohm parallel/series (not recommended)&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">default</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">0.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Invalid selection&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+            <span class="s1">}</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(selectedVoiceCoilImpedance == </span><span class="s2">8.0</span><span class="s1">) {</span>
+            <span class="s0">switch </span><span class="s1">(selectedNumSpeakers) {</span>
+                <span class="s0">case </span><span class="s2">1</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">8.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option: 8 ohm standard&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">2</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">4.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option: 4 ohm parallel&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">3</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">2.67</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option: 2.67 ohm parallel&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">4</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">2.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 2 ohm parallel </span><span class="s0">\n </span><span class="s4">Option 2: 8 ohm series/parallel&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">default</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">0.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Invalid selection&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+        <span class="s0">else if </span><span class="s1">(selectedVoiceCoilImpedance == </span><span class="s2">9.0</span><span class="s1">) {</span>
+            <span class="s0">switch </span><span class="s1">(selectedNumSpeakers) {</span>
+                <span class="s0">case </span><span class="s2">1</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">4.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option: 8 ohm standard&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">2</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">2</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 2 ohm parallel  </span><span class="s0">\n </span><span class="s4">Option 2: 8 ohm series&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">3</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">1.34</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 1.34 ohm parallel </span><span class="s0">\n </span><span class="s4">Option 2: 12 ohm&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">4</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">1.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Option 1: 1 ohm parallel </span><span class="s0">\n </span><span class="s4">Option 2: 4 ohm series/parallel&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">default</span><span class="s1">:</span>
+                    <span class="s1">impedanceResult = </span><span class="s2">0.0</span><span class="s0">;</span>
+                    <span class="s1">result = </span><span class="s4">&quot;</span><span class="s0">\n </span><span class="s4">Invalid selection&quot;</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+            <span class="s1">}}</span>
+
+        <span class="s0">else </span><span class="s1">{</span>
+            <span class="s1">impedanceResult = </span><span class="s2">0.0</span><span class="s0">;</span>
+            <span class="s1">result = </span><span class="s4">&quot;Invalid selection&quot;</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s0">if </span><span class="s1">(selectedNumSpeakers == </span><span class="s2">1</span><span class="s1">){</span>
+            <span class="s1">textViewResult.setText(</span><span class="s4">&quot;Speaker Quantity: &quot; </span><span class="s1">+ selectedNumSpeakers + </span><span class="s4">&quot; speaker&quot; </span><span class="s1">+</span>
+                    <span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">Voice Coil/s Impedance: &quot; </span><span class="s1">+ selectedVoiceCoilImpedance + </span><span class="s4">&quot; ohm&quot; </span><span class="s1">+</span>
+                    <span class="s4">&quot;</span><span class="s0">\n \n</span><span class="s4">Final Result: &quot;  </span><span class="s1">+ result)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">else </span><span class="s1">{</span>
+            <span class="s1">textViewResult.setText(</span><span class="s4">&quot;Speaker Quantity: &quot; </span><span class="s1">+ selectedNumSpeakers + </span><span class="s4">&quot; speakers&quot; </span><span class="s1">+</span>
+                <span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">Voice Coil/s Impedance: &quot; </span><span class="s1">+ selectedVoiceCoilImpedance + </span><span class="s4">&quot; ohm&quot; </span><span class="s1">+</span>
+                <span class="s4">&quot;</span><span class="s0">\n \n</span><span class="s4">Final Result: &quot; </span><span class="s1">+ result)</span><span class="s0">;</span>
+    <span class="s1">}}</span>
+    
+
+    <span class="s0">private double </span><span class="s1">getVoiceCoilImpedance(</span><span class="s0">int </span><span class="s1">position) {</span>
+        <span class="s0">switch </span><span class="s1">(position) {</span>
+            <span class="s0">case </span><span class="s2">0</span><span class="s1">:</span>
+                <span class="s0">return </span><span class="s2">1.0</span><span class="s0">;</span>
+            <span class="s0">case </span><span class="s2">1</span><span class="s1">:</span>
+                <span class="s0">return </span><span class="s2">2.0</span><span class="s0">;</span>
+            <span class="s0">case </span><span class="s2">2</span><span class="s1">:</span>
+                <span class="s0">return </span><span class="s2">4.0</span><span class="s0">;</span>
+            <span class="s0">case </span><span class="s2">3</span><span class="s1">:</span>
+                <span class="s0">return </span><span class="s2">6.0</span><span class="s0">;</span>
+            <span class="s0">case </span><span class="s2">4</span><span class="s1">:</span>
+                <span class="s0">return </span><span class="s2">9.0</span><span class="s1">-</span><span class="s2">5.0</span><span class="s0">;</span>
+            <span class="s0">case </span><span class="s2">5</span><span class="s1">:</span>
+                <span class="s0">return </span><span class="s2">8.0</span><span class="s0">;</span>
+            <span class="s0">default</span><span class="s1">:</span>
+                <span class="s0">return </span><span class="s2">0.0</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public boolean </span><span class="s1">onOptionsItemSelected(MenuItem item) {</span>
+        <span class="s3">// Handle the back button click</span>
+        <span class="s0">if </span><span class="s1">(item.getItemId() == android.R.id.home) {</span>
+            <span class="s1">onBackPressed()</span><span class="s0">;</span>
+            <span class="s0">return true;</span>
+        <span class="s1">}</span>
+        <span class="s0">return super</span><span class="s1">.onOptionsItemSelected(item)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

@@ -15,4 +15,8 @@
     <item name="action_search" type="id" />
     <item name="titleTextView" type="id" />
     <item name="descriptionTextView" type="id" />
+    <item name="FirstOptionSelection" type="id" />
+    <item name="SecondOptionSelection" type="id" />
+    <item name="ThirdOptionSelection" type="id" />
+    <item name="FourthOptionSelection" type="id" />
 </resources>

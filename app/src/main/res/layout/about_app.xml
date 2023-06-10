@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Massa Bassa je inovativna aplikacija koja pruža korisnicima razne alate i kalkulatore kako bi jednostavnije izradili i izračunali svoj sound sistem. Bilo da se bavite profesionalnom audio opremom ili jednostavno želite poboljšati kvalitetu zvuka u svom prostoru, Massa Bassa će vam pružiti sve potrebne resurse i informacije."
+        android:text="Massa Bassa is an innovative car audio application that provides users with various links and calculators to help them easily design and calculate their sound system in the car. Whether you're involved in professional audio equipment, want to improve the sound quality in your car, or explore upcoming car audio/style events in Croatia, Massa Bassa will provide you with all the necessary resources and information!"
         android:textSize="22sp"
         android:textColor="@android:color/black"
         android:layout_marginStart="16dp"

@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/PrvaSlikaSelection"
+        android:id="@+id/FirstOptionSelection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -24,7 +24,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/DrugaSlikaSelection"
+        android:id="@+id/SecondOptionSelection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="2dp"
@@ -38,7 +38,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/TrecaSlikaSelection"
+        android:id="@+id/ThirdOptionSelection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="2dp"
@@ -51,13 +51,13 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/CetvrtaSlikaSelection"
+        android:id="@+id/FourthOptionSelection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="2dp"
         android:background="@android:color/white"
         android:padding="20dp"
-        android:text="Wire Calculator"
+        android:text="Subwoofer Wiring Calculator"
         android:textAllCaps="false"
         android:textColor="#039BE5"
         android:textSize="24sp"

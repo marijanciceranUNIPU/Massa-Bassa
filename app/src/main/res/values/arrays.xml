@@ -1,2 +1,4 @@
 <resources>
+    <string-array name="num_speakers" />
+    <string-array name="voice_coil_impedances" />
 </resources>

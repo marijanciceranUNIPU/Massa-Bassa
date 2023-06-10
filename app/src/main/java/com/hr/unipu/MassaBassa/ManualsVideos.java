@@ -1,14 +1,11 @@
 package com.hr.unipu.MassaBassa;
 
-import android.content.Intent;
-import android.net.Uri;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.SearchView;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,6 +20,7 @@ public class ManualsVideos extends AppCompatActivity {
     private ManualsVideosAdapter manualsVideosAdapter;
     private List<ManualVideoItem> manualVideoList;
     private List<ManualVideoItem> filteredList;
+    private EditText searchEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +28,10 @@ public class ManualsVideos extends AppCompatActivity {
         setContentView(R.layout.activity_manuals_videos);
 
         recyclerView = findViewById(R.id.recyclerView);
+        searchEditText = findViewById(R.id.searchEditText);
+
+        EditText searchEditText = findViewById(R.id.searchEditText);
+        searchEditText.setTextColor(Color.BLACK);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -46,7 +48,7 @@ public class ManualsVideos extends AppCompatActivity {
         manualVideoList.add(new ManualVideoItem("Video - How to install an amp and sub in your car?", "This video shows you a typical installation and the tools and best practices that'll help your project become a success. ", "https://www.youtube.com/watch?v=eidK7FNI0GA&ab_channel=CRUTCHFIELD","https://i3.ytimg.com/vi/eidK7FNI0GA/maxresdefault.jpg"));
         manualVideoList.add(new ManualVideoItem("Video - Avoid these 5 common Car Audio NOOB Mistakes!", "How can we better install our subwoofers, amplifier, radio, speakers and wiring? Avoid these five mistakes! ", "https://www.youtube.com/watch?v=1FTsmUCbvoM","https://i3.ytimg.com/vi/1FTsmUCbvoM/maxresdefault.jpg"));
         manualVideoList.add(new ManualVideoItem("YouTube Channel - EXOcontralto", "Bass videos, bass builds, car audio advice and much more!", "https://www.youtube.com/@EXOcontralto","https://yt3.googleusercontent.com/ytc/AGIKgqOvKL5WkSWlEj46Q_LwSs6XKHbTTmGvQWcBJIIv=s176-c-k-c0x00ffffff-no-rj-mo"));
-        manualVideoList.add(new ManualVideoItem("YouTube Channel - LIFEOFPRICE", "Crazy basshead videos, competitions, webshop announcements, car audio advice and much more!", "https://www.youtube.com/@THELIFEOFPRICE","https://yt3.googleusercontent.com/ytc/AGIKgqNtyrD65lTCOPodDh4A3xYjMT3vQllcGAf20lTeOA=s176-c-k-c0x00ffffff-no-rj"));
+        manualVideoList.add(new ManualVideoItem("YouTube Channel - LIFEOFPRICE", "Crazy bass head videos, competitions, webshop announcements, car audio advice and much more!", "https://www.youtube.com/@THELIFEOFPRICE","https://yt3.googleusercontent.com/ytc/AGIKgqNtyrD65lTCOPodDh4A3xYjMT3vQllcGAf20lTeOA=s176-c-k-c0x00ffffff-no-rj"));
         manualVideoList.add(new ManualVideoItem("YouTube Channel - meade916", "Customization and enhancement of car audio systems, build videos and so much to explore!", "https://www.youtube.com/@meade916","https://yt3.googleusercontent.com/sAAkcnvSxd2VlBq7Dg3TTUPL-wjwLdJV_Srydig5j9a-NsVbtPKEzIbgu7UW27eij66KnW4GDw=s176-c-k-c0x00ffffff-no-rj"));
 
         filteredList.addAll(manualVideoList);
@@ -54,17 +56,18 @@ public class ManualsVideos extends AppCompatActivity {
         manualsVideosAdapter = new ManualsVideosAdapter(filteredList);
         recyclerView.setAdapter(manualsVideosAdapter);
 
-        SearchView searchView = findViewById(R.id.searchView);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        searchEditText.addTextChangedListener(new TextWatcher() {
             @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
-                filterItems(newText);
-                return true;
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filterItems(s.toString());
             }
         });
     }
@@ -72,7 +75,7 @@ public class ManualsVideos extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
+            onBackPressed(); // Handle back button press
             return true;
         }
         return super.onOptionsItemSelected(item);

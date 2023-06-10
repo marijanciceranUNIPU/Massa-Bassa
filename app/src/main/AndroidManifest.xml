@@ -23,9 +23,9 @@
         <activity android:name=".Calculator_Cone_Area"/>
         <activity android:name=".MainActivityPodMenu"/>
         <activity android:name=".Calculator_Different_Cone_Area"/>
-        <activity android:name=".Calculator_Wire_Amps"/>
         <activity android:name=".ManualsVideos"/>
-        <activity android:name=".EventsActivity"></activity>
+        <activity android:name=".EventsActivity"/>
+        <activity android:name=".SubwooferWiringActivity"/>
         <activity
             android:name=".AboutApp"
             android:theme="@style/AppTheme">

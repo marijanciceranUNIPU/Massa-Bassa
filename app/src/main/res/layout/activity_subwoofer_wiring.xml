@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".SubwooferWiringActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subwoofer Wiring Calculator"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:paddingBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Number of Speakers:"
+        android:textColor="#000000"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
+
+    <Spinner
+        android:id="@+id/spinnerNumSpeakers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/num_speakers"
+        android:paddingBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voice Coil Impedance:"
+        android:textColor="#000000"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
+
+    <Spinner
+        android:id="@+id/spinnerVoiceCoils"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/voice_coil_impedances"
+        android:paddingBottom="16dp" />
+
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp" />
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp" />
+
+</LinearLayout>

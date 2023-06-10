@@ -51,7 +51,21 @@ public class ManualsVideosAdapter extends RecyclerView.Adapter<ManualsVideosAdap
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openUrlInBrowser(item.getUrl(), holder.itemView);
+                openUrlInBrowser(item.getUrl(), v);
+            }
+        });
+
+        holder.titleTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openUrlInBrowser(item.getUrl(), v);
+            }
+        });
+
+        holder.descriptionTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openUrlInBrowser(item.getUrl(), v);
             }
         });
     }
